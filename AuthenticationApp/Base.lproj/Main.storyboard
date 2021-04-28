@@ -70,7 +70,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oZg-sk-2GI" userLabel="Social">
                                                     <rect key="frame" x="52" y="685" width="310" height="50"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6N1-Md-EJB" userLabel="Facebook">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6N1-Md-EJB" userLabel="Facebook" customClass="FBSDKLoginButton">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
                                                             <color key="backgroundColor" red="0.30980392156862746" green="0.44705882352941173" blue="0.64313725490196072" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                             <constraints>
@@ -93,8 +93,14 @@
                                                             <state key="normal" title="Google">
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="googleBTNTapped:" destination="Nhp-nj-v1v" eventType="touchUpInside" id="1j4-gI-3XV"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="UHg-2u-uj1"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="59N-cv-xdY" userLabel="Account">
                                                     <rect key="frame" x="62.5" y="755" width="289.5" height="35"/>
@@ -160,6 +166,9 @@
                             <outlet property="delegate" destination="Nhp-nj-v1v" id="b4Q-tq-tVZ"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="btnFacebook" destination="6N1-Md-EJB" id="kam-SE-adS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBw-Az-OD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
